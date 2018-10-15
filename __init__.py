@@ -65,7 +65,7 @@ class mmSkill(MycroftSkill):
     def handle_shutdown_intent(self, message):
         if self.getUserConfirmation(self.tasks['poweroff']):
             self.speak_dialog("shuttingDown")
-            os.system("pm2 stop mm")
+            os.system("pm2 delete mm")
 
     @intent_file_handler('reboot.intent')
     def handle_restart_intent(self, message):
@@ -77,7 +77,7 @@ class mmSkill(MycroftSkill):
     def handle_start_intent(self, message):
         if self.getUserConfirmation(self.tasks['boot']):
             self.speak_dialog("start")
-            os.system("pm2 start mm")
+            os.system("pm2 start ~/mm.sh")
 
     def stop(self):
         pass

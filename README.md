@@ -9,7 +9,8 @@ This skill allows the user to turn off, start, restart Magic Mirror (tested on R
 	pm2 startup //PM2 will now show you a command you need to execute.
 
 ## Make a MagicMirror start script.
-	To use PM2 in combination with MagicMirror, we need to make a simple shell script. Preferable, we put this script outside the MagicMirror folder to make sure it won't give us any issues if we want to upgrade the mirror.
+	To use PM2 in combination with MagicMirror, we need to make a simple shell script. 
+	Preferable, we put this script outside the MagicMirror folder to make sure it won't give us any issues if we want to upgrade the mirror.
 
 	cd ~
 	nano mm.sh
@@ -25,8 +26,7 @@ This skill allows the user to turn off, start, restart Magic Mirror (tested on R
 	Test:
 		in these steps:
 			pm2 start mm.sh // to start magic mirror (wait a bit till it loads)
-			pm2 stop mm // to stop magic mirror
-			pm2 save // save current state (make sure magic mirror is stopped
+			pm2 delete mm // to stop magic mirror
 	
 ## Examples
 	magic mirror shutdown
