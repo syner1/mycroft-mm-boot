@@ -75,9 +75,9 @@ class mmSkill(MycroftSkill):
 
     @intent_file_handler('boot.intent')
     def handle_start_intent(self, message):
-        if self.getUserConfirmation(self.tasks['boot']):
-            self.speak_dialog("start")
-            os.system("pm2 start ~/mm.sh")
+        # if self.getUserConfirmation(self.tasks['boot']):
+        self.speak_dialog("start")
+        os.system("pm2 start ~/mm.sh")
 
     def stop(self):
         pass
